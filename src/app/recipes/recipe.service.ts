@@ -10,33 +10,33 @@ export class RecipeService {
 
     recipesChanged = new Subject<Recipe[]>();
 
-    private recipes: Recipe[] = [
-        new Recipe(
-            'Roast chicken and vegetables',
-            'This is a delicious rustic style roast dinner',
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcHyMT-YBFHCat-MAeN5kRVaYUdk0JyP-n0_6iM4yu-aHcCS8_',
-            [
-                new Ingredient('large chicken', 1),
-                new Ingredient('onions', 3),
-                new Ingredient('carrots', 4),
-                new Ingredient('potatoes', 5),
-                new Ingredient('squash', 2)
-            ]
-        ),
-        new Recipe('Grilled salmon salad',
-            'This is a wonderfully fresh meal for those hot summer days',
-            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM7L__brPt6lusuKYkgUDEOZCwChhbmegqqcinAWZBY4mxwQLY',
-            [
-                new Ingredient('salmon steaks', 4),
-                new Ingredient('onions', 1),
-                new Ingredient('carrots', 2),
-                new Ingredient('capsicum', 4),
-                new Ingredient('lemon (or lime)', 2)
-            ]
-        )
-    ];
+    // private recipes: Recipe[] = [
+    //     new Recipe(
+    //         'Roast chicken and vegetables',
+    //         'This is a delicious rustic style roast dinner',
+    //         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcHyMT-YBFHCat-MAeN5kRVaYUdk0JyP-n0_6iM4yu-aHcCS8_',
+    //         [
+    //             new Ingredient('large chicken', 1),
+    //             new Ingredient('onions', 3),
+    //             new Ingredient('carrots', 4),
+    //             new Ingredient('potatoes', 5),
+    //             new Ingredient('squash', 2)
+    //         ]
+    //     ),
+    //     new Recipe('Grilled salmon salad',
+    //         'This is a wonderfully fresh meal for those hot summer days',
+    //         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM7L__brPt6lusuKYkgUDEOZCwChhbmegqqcinAWZBY4mxwQLY',
+    //         [
+    //             new Ingredient('salmon steaks', 4),
+    //             new Ingredient('onions', 1),
+    //             new Ingredient('carrots', 2),
+    //             new Ingredient('capsicum', 4),
+    //             new Ingredient('lemon (or lime)', 2)
+    //         ]
+    //     )
+    // ];
 
-    // private recipes: Recipe[] = [];
+    private recipes: Recipe[] = [];
 
     constructor(private shoppingListService: ShoppingListService) {}
 

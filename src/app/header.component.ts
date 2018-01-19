@@ -7,7 +7,7 @@ import { DataStorageService } from './shared/data-storage.service';
     selector: 'app-header',
     templateUrl: './header.component.html'
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit {
 
     constructor(private dataStorageService: DataStorageService) {}
 
@@ -28,11 +28,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-
-    }
-
-    ngOnDestroy() {
-
+        this.dataStorageService.getRecipes();
     }
 
 }
