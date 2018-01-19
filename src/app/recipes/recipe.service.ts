@@ -36,19 +36,13 @@ export class RecipeService {
         )
     ];
 
+    // private recipes: Recipe[] = [];
+
     constructor(private shoppingListService: ShoppingListService) {}
 
-    getRecipes() {
-        /* use slice() to get a copy of the array, not the reference object */
-        return this.recipes.slice();
-    }
-
-    getRecipe(index: number) {
-        return this.recipes[index];
-    }
-
-    addIngredientsToShoppingList(ingredients: Ingredient[]) {
-       this.shoppingListService.addIngredients(ingredients);
+    setRecipes(recipes: Recipe[]) {
+        this.recipes = recipes;
+        this.recipesChanged.next(this.recipes.slice());
     }
 
     addRecipe(recipe: Recipe) {
@@ -65,4 +59,18 @@ export class RecipeService {
         this.recipes.splice(index, 1);
         this.recipesChanged.next(this.recipes.slice());
     }
+
+    getRecipes() {
+        /* use slice() to get a copy of the array, not the reference object */
+        return this.recipes.slice();
+    }
+
+    getRecipe(index: number) {
+        return this.recipes[index];
+    }
+
+    addIngredientsToShoppingList(ingredients: Ingredient[]) {
+       this.shoppingListService.addIngredients(ingredients);
+    }
+
 }
